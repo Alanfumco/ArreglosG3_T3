@@ -6,20 +6,33 @@ namespace ArreglosLogica
 {
     public class MiArreglo
     {
+        //Campos o atributos
+        private int _tope;
+        private int[] _arreglo;
+
+        //Constructor
+        public MiArreglo(int n)
+        {
+            N = n;
+            _arreglo = new int[n];
+            _tope = 0;
+        }
+
         //Propiedades
         public int N { get; }
         public bool EstaLleno => _tope == N;
         public bool EstaVacio => _tope == 0;
 
         //Metodos
+        //Metodo Llenar
         public void Llenar(int minimo, int maximo)
         {
             Random random = new Random();
             for (int i=0; i < N; i++)
             {
                 arreglo[i] = random.Next(minimo, maximo);
-
             }
+            _tope = N;
         }
 
         //Metodo ordenar (Burbuja)
