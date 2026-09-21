@@ -30,21 +30,36 @@ namespace ArreglosLogica
             Random random = new Random();
             for (int i=0; i < N; i++)
             {
-                arreglo[i] = random.Next(minimo, maximo);
+                _arreglo[i] = random.Next(minimo, maximo);
             }
             _tope = N;
         }
 
         //Metodo ordenar (Burbuja)
+
         public void Ordenar()
+        {
+            Ordenar(true);
+        }
+        public void Ordenar(bool ascendente)
         {
             for (int i = 0; i < _tope - 1; i++)
             {
                 for (int j = i + 1; j < _tope; j++)
                 {
-                    if(_arreglo[i] > _arreglo[j])
+                    if (ascendente)
                     {
-                        Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        if (_arreglo[i] > _arreglo[j])
+                        {
+                            Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        }
+                        else
+                        {
+                            if (_arreglo[i] < _arreglo[j])
+                            {
+                                Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                            }
+                        }
                     }
                 }
             }
@@ -71,7 +86,7 @@ namespace ArreglosLogica
             contador++;
             for (int i=0; i<_tope; i++)
             {
-                salida += $"{arreglo[i]}\t";
+                salida += $"{_arreglo[i]}\t";
                 if(contador > 9)
                 {
                     contador = 0;

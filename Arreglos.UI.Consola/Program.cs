@@ -1,16 +1,26 @@
-﻿using ArraglosLogica;
+﻿using ArreglosLogica;
 
-Console.WriteLine("Arreglos "),
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Arreglos ");
 
-    MiArreglo oMyArreglo = new(100);
+        MiArreglo oMyArreglo = new(100);
 
-oMyArreglo.Llenar(1, 100);
+        oMyArreglo.Llenar(1, 100);
 
-Console.WriteLine("\nArreglo desordenado: ");
-Console.WriteLine(oMyArreglo);
+        Console.WriteLine("\nArreglo desordenado: ");
+        Console.WriteLine(oMyArreglo);
 
-Console.WriteLine("\nArreglo ordenado: ");
-oMyArreglo.Ordenar();
-Console.WriteLine(oMyArreglo);
+        Console.WriteLine("\nArreglo ordenado ascendente: ");
+        oMyArreglo.Ordenar(true);
+        Console.WriteLine(oMyArreglo);
 
-Console.ReadKey();
+        Console.WriteLine("\nArreglo ordenado descendente: ");
+        oMyArreglo.Ordenar(false);
+        Console.WriteLine(oMyArreglo);
+
+        Console.ReadKey();
+    }
+}
