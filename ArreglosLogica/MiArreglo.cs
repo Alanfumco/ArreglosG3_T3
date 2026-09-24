@@ -24,7 +24,14 @@ using System.Text;
         public bool EstaVacio => _tope == 0;
 
         //Metodos
-        //Metodo Llenar
+
+        //Metodo llenar
+        public void Llenar()
+        {
+            Llenar(1,100);
+        }
+
+        //Metodo Llenar con parametros
         public void Llenar(int minimo, int maximo)
         {
             Random random = new Random();

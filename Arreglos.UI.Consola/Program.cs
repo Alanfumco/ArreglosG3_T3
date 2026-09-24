@@ -7,20 +7,20 @@ public class Program
     {
         Console.WriteLine("Arreglos ");
 
-        MiArreglo oMyArreglo = new(5);
+        //MiArreglo oMyArreglo = new(5);
 
-        oMyArreglo.Agregar(3);
-        oMyArreglo.Agregar(5);
-        oMyArreglo.Agregar(7);
+        //oMyArreglo.Agregar(3);
+        //oMyArreglo.Agregar(5);
+        //oMyArreglo.Agregar(7);
 
-        oMyArreglo.Insertar(2, 0);
+        //oMyArreglo.Insertar(2, 0);
 
-        Console.WriteLine(oMyArreglo);
+        //Console.WriteLine(oMyArreglo);
 
-        Console.WriteLine("--------------------------");
-        oMyArreglo.Eliminar(1);
+        //Console.WriteLine("--------------------------");
+        //oMyArreglo.Eliminar(1);
 
-        Console.WriteLine(oMyArreglo);
+        //Console.WriteLine(oMyArreglo);
 
 
 
@@ -40,19 +40,20 @@ public class Program
         //    throw;
         //}
 
-        //oMyArreglo.Llenar(1, 100);
+        MiArreglo oMyArreglo = new(100);
+        oMyArreglo.Llenar();
 
 
-        //Console.WriteLine("\nArreglo desordenado: ");
-        //Console.WriteLine(oMyArreglo);
+        Console.WriteLine("\nArreglo desordenado: ");
+        Console.WriteLine(oMyArreglo);
 
-        //Console.WriteLine("\nArreglo ordenado ascendente: ");
-        //oMyArreglo.Ordenar(true);
-        //Console.WriteLine(oMyArreglo);
+        Console.WriteLine("\nArreglo ordenado ascendente: ");
+        oMyArreglo.Ordenar();
+        Console.WriteLine(oMyArreglo);
 
-        //Console.WriteLine("\nArreglo ordenado descendente: ");
-        //oMyArreglo.Ordenar(false);
-        //Console.WriteLine(oMyArreglo);
+        Console.WriteLine("\nArreglo ordenado descendente: ");
+        oMyArreglo.Ordenar(false);
+        Console.WriteLine(oMyArreglo);
 
         Console.ReadKey();
     }
