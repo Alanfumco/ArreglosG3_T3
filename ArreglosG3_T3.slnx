@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="Arreglos.UI.Consola/Arreglos.UI.Consola.csproj" />
-  <Project Path="ArreglosLogica/ArreglosLogica.csproj">
-    <BuildDependency Project="Arreglos.UI.Consola/Arreglos.UI.Consola.csproj" />
+  <Project Path="Arreglos.UI.Consola/Arreglos.UI.Consola.csproj">
+    <BuildDependency Project="ArreglosLogica/ArreglosLogica.csproj" />
   </Project>
+  <Project Path="ArreglosLogica/ArreglosLogica.csproj" />
 </Solution>

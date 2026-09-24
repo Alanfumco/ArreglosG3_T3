@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ArreglosLogica
+ namespace ArreglosLogica
 {
     public class MiArreglo
     {
@@ -74,6 +74,62 @@ namespace ArreglosLogica
 
         }
 
+        //Metodo agregar 
+        public void Agregar(int numero)
+        {
+            if(EstaLleno)
+            {
+                throw new Exception("El arreglo está lleno.");
+            }
+            _arreglo[_tope] = numero;
+            _tope++;
+        }
+
+        //Metodo insertar
+        public void Insertar(int numero, int posicion)
+        {
+            if (EstaLleno)
+            {
+                throw new Exception("El arreglo está lleno.");
+            }
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+            if(posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for (int i = _tope; i > posicion; i--)
+            {
+                _arreglo[i] = _arreglo[i - 1];
+            }
+            _arreglo[posicion] = numero;
+            _tope++;
+        }
+
+        //Metodo eliminar
+        public void Eliminar(int posicion)
+        {
+            if (EstaVacio)
+            {
+                throw new Exception("El arreglo está vacío.");
+            }
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for (int i = posicion; i < _tope - 1; i++)
+            {
+                _arreglo[i] = _arreglo[i + 1];
+            }
+            _tope--;
+        }
+
         //Metodo ToString
         public override string ToString()
         {
@@ -83,6 +139,7 @@ namespace ArreglosLogica
 
             }
             int contador = 0;
+            string salida = string.Empty;
             contador++;
             for (int i=0; i<_tope; i++)
             {
